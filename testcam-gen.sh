@@ -9,7 +9,7 @@ sudo modprobe -r v4l2loopback
 sleep 1
 
 # Load module with 2 camera sources
-sudo modprobe v4l2loopback devices=2
+sudo modprobe v4l2loopback devices=1 exclusive_caps=1
 
 # Launch our fake video feeds
 gst-launch-1.0 videotestsrc pattern=ball ! v4l2sink device=/dev/video0 &
